@@ -6,6 +6,14 @@
 # - True if the inequality expression is correct, False otherwise.
 
 
+def correct_signs(expression):
+    #I struggled with this task and LLM mentioned that eval() is dangerous to use. Please elaborate.
+    try:
+        result = eval(expression)
+        return bool(result)
+    except Exception:
+        return False
+
 # Example usages:
 print(correct_signs("3 < 7 < 11"))  # ➞ True
 print(correct_signs("13 > 44 > 33 > 1"))  # ➞ False
