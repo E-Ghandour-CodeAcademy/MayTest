@@ -7,7 +7,12 @@
 # Returns:
 # - A string with the specified words censored.
 
+def censor_text(txt, lst, char):
+    for word in lst:
+        txt = txt.replace(word, char * len(word))
+
+    return txt
 
 # Example usage:
-# print(censor_text("hello there, how are you doing today?", ["hello", "today"], "*"))  # Output: "***** there, how are you doing *****?"
-# print(censor_text("It is very sunny outside, perfect day for a picnic", ["sunny", "picnic"], "#"))  # Output: "It is very ##### outside, perfect day for a ######"
+print(censor_text("hello there, how are you doing today?", ["hello", "today"], "*"))  # Output: "***** there, how are you doing *****?"
+print(censor_text("It is very sunny outside, perfect day for a picnic", ["sunny", "picnic"], "#"))  # Output: "It is very ##### outside, perfect day for a ######"
