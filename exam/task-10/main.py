@@ -7,7 +7,20 @@
 # Returns:
 # - A string representing the current state of the phrase with unguessed letters replaced by hyphens.
 
+def generate_hangman_phrase(phrase, guessed_letters):
+    result = ""
+    for char in phrase:
+        if char.isalpha():
+            if char.lower() in guessed_letters:
+                result += char
+            else:
+                result += "-"
+        else:
+            result += char
+            
+    return result
+
 # Example usage:
-# print(generate_hangman_phrase("hello world", ['e', 'o']))  # Output: "-e--o -o---"
-# print(generate_hangman_phrase("Happy Birthday", ['a', 'p', 'y']))  # Output: "Happ-y B--th-a-"
-# print(generate_hangman_phrase("OpenAI GPT-3", ['p', 't', 'g', '3']))  # Output: "-p-n-- GPT-3"
+print(generate_hangman_phrase("hello world", ['e', 'o']))
+print(generate_hangman_phrase("Happy Birthday", ['a', 'p', 'y']))
+print(generate_hangman_phrase("OpenAI GPT-3", ['p', 't', 'g', '3']))
