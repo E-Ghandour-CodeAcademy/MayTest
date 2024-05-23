@@ -18,3 +18,9 @@ def remove_empty_arrays(arr):
 #    in remove_empty_arrays
 #    in <listcomp>
 # TypeError: object of type 'int' has no len()
+
+
+def remove_empty_arrays(arr):
+    return [x for x in arr if not (isinstance(x, list) and len(x) == 0)]
+
+print(remove_empty_arrays([1, 2, [], 4]))
