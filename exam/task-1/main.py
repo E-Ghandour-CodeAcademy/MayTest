@@ -5,8 +5,11 @@
 # - The function should compute the average of the 'age' values for all user objects within the provided array.
 # - The result should be rounded to two decimal places if necessary.
 def calculate_average_age(users):
-    # Example function body (implementation needed)
-    pass
+    total_age = sum(user['age'] for user in users)
+    num_users = len(users)
+    average_age = total_age / num_users
+
+    return round(average_age, 2)
 
 # Part 2: Retrieve Sorted List of User Names
 # Objective: Create a function `list_user_names` that takes an array of user objects and returns a list
@@ -15,8 +18,10 @@ def calculate_average_age(users):
 # - The function should extract the 'name' from each user object and compile a list of these names.
 # - The list should be returned in alphabetical order.
 def list_user_names(users):
-    # Example function body (implementation needed)
-    pass
+    names = [user['name'] for user in users]
+    sorted_names = sorted(names)
+
+    return sorted_names
 
 # Example user data
 users = [
